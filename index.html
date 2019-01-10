@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Simulator 2019</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header>
+                    <div class="card p-2 m-3">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <h1 class="card-title text-center">Amazing Fantastic Spectacular Train Simulator 2019</h1>
+                            <p class="card-text text-muted">Log your train information and watch the magic happen!</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-primary m-3">
+                    <h4 class="card-header bg-primary text-white">Thomas' Super Duper Schedule</h2>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Train Name</th>
+                                            <th scope="col">Destination</th>
+                                            <th scope="col">Frequency (min)</th>
+                                            <th scope="col">Next Arrival</th>
+                                            <th scope="col">Minutes Away</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-primary m-3">
+                    <h4 class="card-header bg-primary text-white">Schedule A Wonderous Train</h4>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <form>
+                                <div class="form-group">
+                                    <label for="trainName">Train Name</label>
+                                    <input type="text" class="form-control" id="trainName" aria-describedby="trainNameHelp" placeholder="Thomas the Dank Engine" required>
+                                    <small id="trainNameHelp" class="form-text text-muted">Pick a dope name for your train</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination">Destination</label>
+                                    <input type="text" class="form-control" id="destination" aria-describedby="destinationHelp" placeholder="Pound Town">
+                                    <small id="destinationHelp" class="form-text text-muted">Fill in the blank: Non-stop to ______</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="departure">First Train Departure Time(HH:mm AM/PM)</label>
+                                    <input type="time" class="form-control" id="departure" aria-describedby="departureHelp">
+                                    <small id="departureHelp" class="form-text text-muted">Do not drag and drop an MP3 here</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="frequency">Frequency(min)</label>
+                                    <input type="number" class="form-control" id="frequency" aria-describedby="frequencyHelp" placeholder="69">
+                                    <small id="frequencyHelp" class="form-text text-muted">Ask yourself: How fast IS my train?</small>
+                                </div>
+                                <button id="submit" class="btn btn-primary">Add Dat Train</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
