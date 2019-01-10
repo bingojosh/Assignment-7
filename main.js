@@ -40,6 +40,21 @@ $(document).ready(function(){
         console.log("There was an error " + errorObject)
     })
 
+    setInterval(() => {
+        $("#tbody").html("");
+        database.ref("/trainData").on("value",(snapshot) => {
+            database.ref("/trainData").on("child_added", function(snapshot){
+                var name = snapshot.val().name
+                var destination = snapshot.val().destination
+                var departure = snapshot.val().departure
+                var frequency = snapshot.val().frequency
+                tablePrint(name, destination, departure, frequency)
+            }, function(errorObject){
+                console.log("There was an error " + errorObject)
+            })
+        })
+    }, 60000)
+
 })
 
 function tablePrint(name, destination, departure, frequency){
