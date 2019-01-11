@@ -1,2 +1,3 @@
 # Thomas' Super Duper Schedule
 
+In this app a user can add a train's name, destination, start time, and interval. This data is then added to a realtime database which updates for everyone who is looking at the application. The data is then computed slightly to display the next time the train would arrive and how many minutes from now that is. The table is running on an interval to keep itself up to date without needing to refresh the page. This seems to cause a bug where new items attempt to print to the table as many times as the interval has repeated since the last addition - this appears very briefly before the low interval time causes another update to the table which removes all the repeats.
